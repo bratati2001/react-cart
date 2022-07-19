@@ -1,19 +1,19 @@
-import{BrowserRouter as Router, Routes, Route} from'react-router-dom';
+import{BrowserRouter as Router, Routes, Route,} from'react-router-dom';
 import Home  from './pages/Home';
 import About from './pages/About';
+import Navigation from './components/navigation';
+const App = () => {
+        return (
+            <>
+                <Router>
+                    <Navigation />
 
-const App = () =>{
-    return (
-        <>
-        <Router>
-            <Routes>
-                <Route path="/" element = {<Home/>}></Route>
-                <Route path="/about" element = {<About/>}></Route>
-
-            
-            </Routes>
-        </Router>
-        </>
-    )
-}
+                    <Routes>
+                        <Route path="/" element={<Home />} exact></Route>
+                        <Route path="/about" element={<About />}></Route>
+                    </Routes>
+                </Router>
+            </>
+        );
+        }
 export default App;
